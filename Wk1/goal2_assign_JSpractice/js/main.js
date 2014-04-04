@@ -102,6 +102,12 @@
 
         //PUT FUNCTION HERE
 
+    function findNum(array, boolean){
+        if (boolean === false || boolean = null){
+            
+        }
+    }
+
     console.log(findNum([31,22,4,67,83,6,5,4]));
     console.log(findNum([31,22,4,67,83,6,5,4], false));
 
