@@ -1,3 +1,14 @@
+/*
+Name: James Stanbridge
+Date: 10 Arpil 2014
+Assignment: JavaScript Practice
+
+Note: I added comments to the problems I had trouble with before to make sure that I understood what was happening in
+each one. I did this without listening to the logic offered in Tuesday's cast. Please let me know if I was off in my
+understanding of anything. Thank you.
+ */
+
+
 // self-executing function
 (function(){
 
@@ -52,7 +63,7 @@
         for(var i = 0, j = arr.length; i < j; i++){ //This tells the function to go through each item in the array.
             average += arr[i]; //This adds each array index to the average.
         }
-        average /= arr.length; //This divides average (which is now the sum of all indexes by the length of the array.
+        average /= arr.length; //This divides average (which is now the sum of all indexes) by the length of the array.
         return average;
     };
 
@@ -121,7 +132,6 @@
 
     console.log("6. find number and create an array of even or odd numbers");
 
-        //PUT FUNCTION HERE
 
     function findNum(array, bool){ //Setting up function.
         var numArr = [], //Declare var for array of numbers to be returned.
