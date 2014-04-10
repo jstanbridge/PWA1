@@ -44,19 +44,23 @@
 
     console.log('------ Goal2: Assignment: JavaScript Practice ----------');
 
+//-----------------------------------------------------------------------------------
 
     console.log("1. avg of an array of numbers");
     var avgNumbers = function(arr){
-
-        //CODE GOES HERE
+        var average = 0;
+        for(var i = 0, j = arr.length; i < j; i++){ //This tells the function to go through each item in the array.
+            average += arr[i]; //This adds each array index to the average.
+        }
+        average /= arr.length; //This divides average (which is now the sum of all indexes by the length of the array.
+        return average;
     };
 
     console.log('avg number = ', avgNumbers([1,2,3,4,5]));
 
-    //--------------------------------------------------------
-    console.log("2. concat first and last name");
+//-----------------------------------------------------------------------------------
 
-        //PUT FUNCTION HERE
+    console.log("2. concat first and last name");
 
 
     function fullName(firstName, lastName){
@@ -67,11 +71,11 @@
 
     console.log(name);
 
-    //--------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
     console.log("3. word count");
     var ipsum = "this is test text that is being used as input to a function"
 
-        //PUT FUNCTION HERE
 
     function wordCount(string){
         return string.split(/\s+/).length;
@@ -79,10 +83,10 @@
 
     console.log(wordCount(ipsum));
 
-    //--------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
     console.log("4. sentence char count");
 
-        //PUT FUNCTION HERE
 
     function charCount(string2){
         return string2.split("").length;
@@ -90,22 +94,56 @@
 
     console.log(charCount(ipsum));
 
-    //--------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
     console.log("5. how many vowels in a word");
 
-        //PUT FUNCTION HERE
+    function vowelsInWord(string){
+        var vowels = ['a','e','i','o','u']; //Create an array with the characters we want to isolate.
+
+        number = 0; //Declare a var to contain the count that will go to the console log.
+
+        this.string = string.toLowerCase().split("");
+
+        for(var i = 0, j = this.string.length; i < j; i++){ //Loop through all characters in the string.
+            for(var ii = 0, jj = vowels.length; ii < jj; ii++){  //Loop through each vowel in the vowels array.
+                if(this.string[i] === vowels [ii]){ //Check to see if a string character is a vowel.
+                    number++; //Increase the count by one if the string character was a vowel.
+                };
+            };
+        };
+        return number;
+    }
 
     console.log(vowelsInWord('JavaScript'));
 
-    //--------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
     console.log("6. find number and create an array of even or odd numbers");
 
         //PUT FUNCTION HERE
 
-    function findNum(array, boolean){
-        if (boolean === false || boolean = null){
-            
-        }
+    function findNum(array, bool){ //Setting up function.
+        var numArr = [], //Declare var for array of numbers to be returned.
+            value;
+
+        if(bool === undefined || bool){  //Check to see if there is no boolean value, or if the value is true.
+            for(var i = 0, j = array.length; i < j; i++){ //Loop through array indexes.
+                value = array[i]; //Set value equal to each array index as it loops.
+                if(value%2 === 0){ //If index value is evenly divisible by 2...
+                    numArr.push(value);  //...add that value to the array that will be returned.
+                };
+            };
+        }else{
+            for(var i = 0, j = array.length; i < j; i++){ //Loop through array indexes.
+                value = array[i]; //Set value equal to each array index as it loops.
+                if(value%2 !== 0){ //If index value is NOT evenly divisible by 2...
+                    numArr.push(value); //...add that value to the array that will be returned.
+                };
+            };
+        };
+
+        return numArr;
     }
 
     console.log(findNum([31,22,4,67,83,6,5,4]));
